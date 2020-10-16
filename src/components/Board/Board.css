@@ -1,0 +1,9 @@
+.board {
+  background-color: rgb(165, 165, 165);
+  border: 1px solid rgb(163, 163, 163);
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}

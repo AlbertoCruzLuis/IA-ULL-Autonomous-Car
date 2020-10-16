@@ -1,0 +1,82 @@
+.options {
+  background-color: rgb(103, 177, 177);
+}
+
+.options-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.options-header {
+  text-align: center;
+  padding: 10px;
+  border-bottom: 0.1px solid grey;
+  margin-bottom: 15px;
+}
+
+.option-dimensions {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.option-select-obstacle {
+  margin-bottom: 10px;
+  width: 250px;
+}
+
+.option-row {
+  margin-right: 15px;
+}
+
+.option-row > input {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.option-row > span {
+  margin-right: 5px;
+}
+
+.option-col > input {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.option-col > span {
+  margin-right: 5px;
+}
+
+.option-submit > button {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(38, 83, 141);
+  color: white;
+  margin-bottom: 10px;
+  padding: 12px;
+  width: 75px;
+}
+
+.options-extra {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(76, 141, 141);
+  border-top: 0.1px solid grey;
+  padding: 10px;
+}
+
+.option > button {
+  background-color: rgb(177, 169, 56);
+  margin-right: 10px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.option > button > img {
+  width: 35px;
+  height: 35px;
+}
+
+.option > button > span {
+  margin-right: 5px;
+}
