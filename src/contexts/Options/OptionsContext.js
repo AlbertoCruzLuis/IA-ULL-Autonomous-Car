@@ -7,11 +7,11 @@ const OptionsContext = createContext({
   handleChangeCols: () => {},
   isBoard: false,
   boardActive: () => {},
-  typeCeil: "",
-  changeTypeCeil: () => {},
+  ChosenCellType: "",
+  changeChosenCellType: () => {},
   selectTypeMode: "",
   handleChangeSelectTypeMode: () => {},
-  typesCeils: ["", "Start", "Obstacle", "Finish"],
+  typesCells: ["", "Start", "Obstacle", "Finish"],
 });
 
 OptionsContext.displayName = "OptionsContext";

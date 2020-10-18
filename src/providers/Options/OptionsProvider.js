@@ -5,10 +5,10 @@ const OptionsProvider = ({ children }) => {
   const [rows, setRows] = useState(0);
   const [cols, setCols] = useState(0);
   const [selectTypeMode, setSelectTypeMode] = useState("");
-  const [typeCeil, setTypeCeil] = useState("Start");
+  const [ChosenCellType, setChosenCellType] = useState("Start");
   const [isBoard, setIsBoard] = useState(false);
 
-  const typesCeils = ["", "Start", "Obstacle", "Finish"];
+  const typesCells = ["", "Start", "Obstacle", "Finish"];
   
 
   const handleChangeRows = (e) => {
@@ -21,8 +21,8 @@ const OptionsProvider = ({ children }) => {
     setIsBoard(false);
   }
 
-  const changeTypeCeil = (type) => {
-    setTypeCeil(type);
+  const changeChosenCellType = (type) => {
+    setChosenCellType(type);
   }
 
   const handleChangeSelectTypeMode = (e) => {
@@ -47,11 +47,11 @@ const OptionsProvider = ({ children }) => {
         handleChangeCols,
         isBoard,
         boardActive,
-        typeCeil,
-        changeTypeCeil,
+        ChosenCellType,
+        changeChosenCellType,
         selectTypeMode,
         handleChangeSelectTypeMode,
-        typesCeils,
+        typesCells,
       }}
     >
       {children}

@@ -9,7 +9,7 @@ const Options = () => {
     handleChangeCols,
     handleChangeSelectTypeMode,
     boardActive,
-    changeTypeCeil,
+    changeChosenCellType,
     selectTypeMode,
   } = useContext(OptionsContext);
 
@@ -51,19 +51,19 @@ const Options = () => {
       {selectTypeMode === "Manual" ? (
         <div className="options-extra">
           <div className="option">
-            <button onClick={() => changeTypeCeil("Start")}>
+            <button onClick={() => changeChosenCellType("Start")}>
               <span>Start</span>
               <img src={require("../../assets/Car.png")} alt="Car" />
             </button>
           </div>
           <div className="option">
-            <button onClick={() => changeTypeCeil("Finish")}>
+            <button onClick={() => changeChosenCellType("Finish")}>
               <span>Finish</span>
               <img src={require("../../assets/Finish.jpg")} alt="Finish" />
             </button>
           </div>
           <div className="option">
-            <button onClick={() => changeTypeCeil("Obstacle")}>
+            <button onClick={() => changeChosenCellType("Obstacle")}>
               <span>Obstacle</span>
               <img src={require("../../assets/Cone.png")} alt="Cone" />
             </button>
