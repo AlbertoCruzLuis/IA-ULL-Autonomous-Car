@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import "./Cell.css";
 import OptionsContext from "../../contexts/Options/OptionsContext";
 import Finish from "./Finish/Finish";

@@ -4,3 +4,22 @@
   color: white;
   text-align: center;
 }
+
+.main {
+  margin: auto;
+  max-width: 1248px;
+  flex: 1;
+  width: 100%;
+}
+
+.footer {
+  background-color: rgb(27, 27, 27);
+  padding: 25px;
+  color: white;
+  text-align: center;
+}
+
+.footer > a {
+  text-decoration: none;
+  color:#bb9f06;
+}

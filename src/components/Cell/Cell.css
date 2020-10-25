@@ -15,6 +15,7 @@
 }
 
 .Cell > button:hover {
-  background-color: rgb(39, 39, 39);
+  background-color: #4b0f50d2;
+  border: 2px solid rgb(233, 233, 233);
   transform: scale(1.05);
 }

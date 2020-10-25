@@ -1,4 +1,4 @@
-import React, { useContext, useLayoutEffect } from "react";
+import React, { useContext } from "react";
 import Cell from "../Cell/Cell";
 import OptionsContext from "../../contexts/Options/OptionsContext";
 import "./Board.css";
@@ -58,7 +58,7 @@ const Board = () => {
               ))}
             </div>
           ))
-        : null}
+        : ( <span>Board</span> )}
     </div>
   );
 };

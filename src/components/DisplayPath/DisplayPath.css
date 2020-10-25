@@ -1,0 +1,8 @@
+.display-path {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.display-path > button {
+  padding: 15px;
+}

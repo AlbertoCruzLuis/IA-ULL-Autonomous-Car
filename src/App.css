@@ -3,4 +3,15 @@
   padding: 0;
   border: 0;
   box-sizing: border-box;
+  font-family: 'Acme', sans-serif;
+}
+
+body {
+  background-color: #4b0f50;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }

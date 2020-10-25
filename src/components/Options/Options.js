@@ -27,12 +27,18 @@ const Options = () => {
         <div className="options-content">
           <div className="option-dimensions">
             <div className="option-row">
-              <span>Rows</span>
-              <input type="text" onChange={handleChangeRows} />
+              <input
+                type="text"
+                placeholder="Rows..."
+                onChange={handleChangeRows}
+              />
             </div>
             <div className="option-col">
-              <span>Cols</span>
-              <input type="text" onChange={handleChangeCols} />
+              <input
+                type="text"
+                placeholder="Cols..."
+                onChange={handleChangeCols}
+              />
             </div>
           </div>
           <div className="option-select-obstacle">
@@ -41,6 +47,28 @@ const Options = () => {
               onChange={handleChangeSelectTypeMode}
             ></Select>
           </div>
+          {selectTypeMode === "Manual" ? (
+            <div className="options-extra">
+              <div className="option">
+                <button onClick={() => changeChosenCellType("Start")}>
+                  <span>Start</span>
+                  <img src={require("../../assets/Car.png")} alt="Car" />
+                </button>
+              </div>
+              <div className="option">
+                <button onClick={() => changeChosenCellType("Finish")}>
+                  <span>Finish</span>
+                  <img src={require("../../assets/Finish.jpg")} alt="Finish" />
+                </button>
+              </div>
+              <div className="option">
+                <button onClick={() => changeChosenCellType("Obstacle")}>
+                  <span>Obstacle</span>
+                  <img src={require("../../assets/Cone.png")} alt="Cone" />
+                </button>
+              </div>
+            </div>
+          ) : null}
           <div className="option-submit">
             <button type="submit" onClick={boardActive}>
               Create
@@ -48,28 +76,6 @@ const Options = () => {
           </div>
         </div>
       </div>
-      {selectTypeMode === "Manual" ? (
-        <div className="options-extra">
-          <div className="option">
-            <button onClick={() => changeChosenCellType("Start")}>
-              <span>Start</span>
-              <img src={require("../../assets/Car.png")} alt="Car" />
-            </button>
-          </div>
-          <div className="option">
-            <button onClick={() => changeChosenCellType("Finish")}>
-              <span>Finish</span>
-              <img src={require("../../assets/Finish.jpg")} alt="Finish" />
-            </button>
-          </div>
-          <div className="option">
-            <button onClick={() => changeChosenCellType("Obstacle")}>
-              <span>Obstacle</span>
-              <img src={require("../../assets/Cone.png")} alt="Cone" />
-            </button>
-          </div>
-        </div>
-      ) : null}
     </Fragment>
   );
 };
