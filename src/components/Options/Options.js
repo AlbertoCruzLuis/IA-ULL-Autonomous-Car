@@ -52,28 +52,28 @@ const Options = () => {
               <div className="option">
                 <button onClick={() => changeChosenCellType("Start")}>
                   <span>Start</span>
-                  <img src={require("../../assets/Car.png")} alt="Car" />
+                  <img src={require("../../assets/Car.svg")} alt="Car" />
                 </button>
               </div>
               <div className="option">
                 <button onClick={() => changeChosenCellType("Finish")}>
                   <span>Finish</span>
-                  <img src={require("../../assets/Finish.jpg")} alt="Finish" />
+                  <img src={require("../../assets/Finish.svg")} alt="Finish" />
                 </button>
               </div>
               <div className="option">
                 <button onClick={() => changeChosenCellType("Obstacle")}>
                   <span>Obstacle</span>
-                  <img src={require("../../assets/Cone.png")} alt="Cone" />
+                  <img src={require("../../assets/Cone.svg")} alt="Cone" />
                 </button>
               </div>
             </div>
           ) : null}
-          <div className="option-submit">
-            <button type="submit" onClick={boardActive}>
-              Create
-            </button>
-          </div>
+        </div>
+        <div className="option-submit">
+          <button type="submit" onClick={boardActive}>
+            Create
+          </button>
         </div>
       </div>
     </Fragment>

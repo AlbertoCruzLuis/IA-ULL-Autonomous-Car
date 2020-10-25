@@ -1,57 +1,63 @@
 .options {
-  background-color: #75b9b9;
+  margin: 15px;
+  width: 100%;
 }
 
 .options-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  margin: 20px;
+  border-left: 2px solid #5e005e;
   width: 100%;
 }
 
 .options-header {
-  text-align: center;
   padding: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
+  color: white;
 }
 
 .options-header > span {
-  font-size: 32px;
+  font-size: 44px;
   font-style: italic;
 }
 
 .option-dimensions {
   display: flex;
-  margin-bottom: 10px;
+  flex-direction: column;
+  margin: 15px;
 }
 
 .option-select-obstacle {
   margin-bottom: 20px;
-  width: 160px;
-}
-
-.option-row {
-  margin-right: 30px;
+  margin: 15px;
+  width: 130px;
 }
 
 .option-row > input {
   padding: 10px;
-  background-color: rgba(0, 0, 0, 0.281);
-  border-bottom: 1px solid rgb(255, 255, 255);
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.199);
+  border-bottom: 1px solid #5e005e;
   color: rgb(207, 207, 207);
-  width: 65px;
+  width: 130px;
 }
 
 .option-row > input::placeholder {
   color: rgb(207, 207, 207);
 }
 
+.option-col {
+  margin-top: 20px;
+}
+
 .option-col > input {
   padding: 10px;
-  background-color: rgba(0, 0, 0, 0.281);
-  border-bottom: 1px solid rgb(255, 255, 255);
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.199);
+  border-bottom: 1px solid #5e005e;
   color: rgb(207, 207, 207);
-  width: 65px;
+  width: 130px;
 }
 
 .option-col > input::placeholder {
@@ -59,26 +65,33 @@
 }
 
 .option-submit {
-  width: 100%;
+  width: 70%;
+  margin-top: 30px;
 }
 
 .option-submit > button {
-  background-color: #136266;
+  background-color: #5e005e;
+  border: 2px solid #360036;
   color: white;
-  font-size: 16px;
-  padding: 15px;
-  width: 100%;cursor: pointer;
+  font-size: 18px;
+  padding: 12px;
+  border-radius: 30px;
+  width: 100%;
+  cursor: pointer;
 }
 
 .options-extra {
   display: flex;
-  justify-content: center;
+  margin: 15px;
   margin-bottom: 10px;
+  margin-top: 10px;
   width: 100%;
 }
 
 
 .option > button {
+  display: flex;
+  flex-direction: column;
   background-color: #bb9f06;
   margin-right: 15px;
   padding: 5px;
@@ -92,4 +105,29 @@
 
 .option > button > span {
   margin-right: 5px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .options {
+    text-align: center;
+  }
+  .options-header {
+    margin-bottom: 0;
+  }
+  .options-content {
+    border: none;
+    margin: auto;
+  }
+  .option-submit {
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .option-select-obstacle {
+    margin: auto;
+  }
+  .options-extra {
+    justify-content: center;
+  }
 }

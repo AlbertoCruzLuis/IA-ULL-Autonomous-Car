@@ -4,7 +4,7 @@ import "./Finish.css";
 const Finish = () => {
   return (
     <div className="finish">
-      <img src={require("../../../assets/Finish.jpg")} alt="Finish" />
+      <img src={require("../../../assets/Finish.svg")} alt="Finish" />
     </div>
   );
 };

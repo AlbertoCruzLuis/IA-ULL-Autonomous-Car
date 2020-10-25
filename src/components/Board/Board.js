@@ -10,7 +10,6 @@ const Board = () => {
     rows,
     cols,
     isBoard,
-    selectTypeMode,
     ChosenCellType,
     typesCells,
   } = useContext(OptionsContext);
