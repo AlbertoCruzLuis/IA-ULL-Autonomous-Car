@@ -1,7 +1,7 @@
 import React, { Fragment, useContext } from "react";
 import Select from "react-select";
 import OptionsContext from "../../contexts/Options/OptionsContext";
-import "./Options.css";
+import "./Options.scss";
 
 const Options = () => {
   const {

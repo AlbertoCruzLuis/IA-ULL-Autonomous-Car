@@ -1,0 +1,13 @@
+@import '../../sass/base/colors';
+
+.footer {
+  background-color: $black-color;
+  padding: 25px;
+  color: white;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    color: $yellow-color;
+  }
+}

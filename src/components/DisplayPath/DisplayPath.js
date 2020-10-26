@@ -1,5 +1,5 @@
 import React, { Fragment, useContext } from "react";
-import "./DisplayPath.css";
+import "./DisplayPath.scss";
 import OptionsContext from "../../contexts/Options/OptionsContext";
 
 const DisplayPath = () => {

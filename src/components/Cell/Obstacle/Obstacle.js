@@ -1,5 +1,5 @@
 import React from "react";
-import "./Obstacle.css";
+import "./Obstacle.scss";
 
 const Obstacle = () => {
   return (

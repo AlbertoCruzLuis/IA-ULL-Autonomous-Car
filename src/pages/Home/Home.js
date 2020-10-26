@@ -1,11 +1,12 @@
 import React, { Fragment } from "react";
 import Board from "../../components/Board/Board";
 import DisplayPath from "../../components/DisplayPath/DisplayPath";
+import Footer from "../../components/Footer/Footer";
 import Information from "../../components/Information/Information";
 import Navbar from "../../components/Navbar/Navbar";
 import Options from "../../components/Options/Options";
 import OptionsProvider from "../../providers/Options/OptionsProvider";
-import "./Home.css";
+import "./Home.scss";
 
 const Home = () => (
   <Fragment>
@@ -26,12 +27,9 @@ const Home = () => (
         </OptionsProvider>
       </div>
     </div>
-    <div className="footer">
-      <span>Created by </span>
-      <a href="https://github.com/AlbertoCruzLuis" target="_blank" rel="noopener noreferrer">
-        Alberto Cruz Luis
-      </a>
-    </div>
+    <footer>
+      <Footer/>
+    </footer>
   </Fragment>
 );
 

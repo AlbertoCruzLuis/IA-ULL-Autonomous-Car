@@ -1,3 +1,5 @@
+@import '../../sass/base/colors';
+
 .options {
   margin: 15px;
   width: 100%;
@@ -15,11 +17,11 @@
   padding: 10px;
   margin-bottom: 25px;
   color: white;
-}
 
-.options-header > span {
-  font-size: 44px;
-  font-style: italic;
+  span {
+    font-size: 44px;
+    font-style: italic;
+  }
 }
 
 .option-dimensions {
@@ -49,35 +51,35 @@
 
 .option-col {
   margin-top: 20px;
-}
 
-.option-col > input {
-  padding: 10px;
-  font-size: 16px;
-  background-color: rgba(255, 255, 255, 0.199);
-  border-bottom: 1px solid #5e005e;
-  color: rgb(207, 207, 207);
-  width: 130px;
-}
+  input {
+    padding: 10px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.199);
+    border-bottom: 1px solid #5e005e;
+    color: rgb(207, 207, 207);
+    width: 130px;
+  }
 
-.option-col > input::placeholder {
-  color: rgb(207, 207, 207);
+  input::placeholder {
+    color: rgb(207, 207, 207);
+  }
 }
 
 .option-submit {
   width: 70%;
   margin-top: 30px;
-}
 
-.option-submit > button {
-  background-color: #5e005e;
-  border: 2px solid #360036;
-  color: white;
-  font-size: 18px;
-  padding: 12px;
-  border-radius: 30px;
-  width: 100%;
-  cursor: pointer;
+  button {
+    background-color: #5e005e;
+    border: 2px solid #360036;
+    color: white;
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 30px;
+    width: 100%;
+    cursor: pointer;
+  }
 }
 
 .options-extra {
@@ -88,23 +90,24 @@
   width: 100%;
 }
 
+.option {
+  button {
+    display: flex;
+    flex-direction: column;
+    background-color: $yellow-color;
+    margin-right: 15px;
+    padding: 5px;
+    border-radius: 10px;
 
-.option > button {
-  display: flex;
-  flex-direction: column;
-  background-color: #bb9f06;
-  margin-right: 15px;
-  padding: 5px;
-  border-radius: 10px;
-}
+    span {
+      margin-right: 5px;
+    }
 
-.option > button > img {
-  width: 35px;
-  height: 35px;
-}
-
-.option > button > span {
-  margin-right: 5px;
+    img {
+      width: 35px;
+      height: 35px;
+    }
+  }
 }
 
 /* Extra small devices (phones, 600px and down) */

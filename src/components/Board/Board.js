@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Cell from "../Cell/Cell";
 import OptionsContext from "../../contexts/Options/OptionsContext";
-import "./Board.css";
+import "./Board.scss";
 import { createMatrix } from "../../utils/board-utils";
 import { useState, useEffect } from "react";
 

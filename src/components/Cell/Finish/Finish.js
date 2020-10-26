@@ -1,5 +1,5 @@
 import React from "react";
-import "./Finish.css";
+import "./Finish.scss";
 
 const Finish = () => {
   return (

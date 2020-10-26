@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from "react";
-import "./Cell.css";
+import "./Cell.scss";
 import OptionsContext from "../../contexts/Options/OptionsContext";
 import Finish from "./Finish/Finish";
 import Obstacle from "./Obstacle/Obstacle";
