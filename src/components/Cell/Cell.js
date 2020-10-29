@@ -1,13 +1,13 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, Fragment } from "react";
 import "./Cell.scss";
 import OptionsContext from "../../contexts/Options/OptionsContext";
 import Finish from "./Finish/Finish";
 import Obstacle from "./Obstacle/Obstacle";
 import Start from "./Start/Start";
+import Path from "./Path/Path";
 
 const Cell = ({ type, posX, posY, modeManual, modeRandom }) => {
-  
-  const { selectTypeMode } = useContext(OptionsContext);
+  const { selectTypeMode, activePath } = useContext(OptionsContext);
 
   useEffect(() => {
     if (selectTypeMode === "Random") {
@@ -15,32 +15,50 @@ const Cell = ({ type, posX, posY, modeManual, modeRandom }) => {
     }
   }, [selectTypeMode]);
 
-  
-
   return (
-    <div className="Cell">
-      {selectTypeMode === "Random" ? (
-        <button>
-          {type === "Start" ? (
-            <Start />
-          ) : type === "Finish" ? (
-            <Finish />
-          ) : type === "Obstacle" ? (
-            <Obstacle />
-          ) : null}
-        </button>
+    <Fragment>
+      {!activePath ? (
+        <div className="Cell">
+          {selectTypeMode === "Random" ? (
+            <button>
+              {type === "Start" ? (
+                <Start />
+              ) : type === "Finish" ? (
+                <Finish />
+              ) : type === "Obstacle" ? (
+                <Obstacle />
+              ) : null}
+            </button>
+          ) : (
+            <button onClick={modeManual}>
+              {type === "" ? null : type === "Start" ? (
+                <Start />
+              ) : type === "Finish" ? (
+                <Finish />
+              ) : type === "Obstacle" ? (
+                <Obstacle />
+              ) : null}
+            </button>
+          )}
+        </div>
       ) : (
-        <button onClick={modeManual}>
-          {type === "" ? null : type === "Start" ? (
-            <Start />
-          ) : type === "Finish" ? (
-            <Finish />
-          ) : type === "Obstacle" ? (
-            <Obstacle />
+        <div className="Cell">
+          {activePath ? (
+            <button>
+              {type === "Start" ? (
+                <Start />
+              ) : type === "Finish" ? (
+                <Finish />
+              ) : type === "Obstacle" ? (
+                <Obstacle />
+              ) : type === "Path" ? (
+                <Path />
+              ) : null}
+            </button>
           ) : null}
-        </button>
+        </div>
       )}
-    </div>
+    </Fragment>
   );
 };
 

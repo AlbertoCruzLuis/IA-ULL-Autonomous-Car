@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import Board from "../../components/Board/Board";
-import DisplayPath from "../../components/DisplayPath/DisplayPath";
 import Footer from "../../components/Footer/Footer";
 import Information from "../../components/Information/Information";
 import Navbar from "../../components/Navbar/Navbar";
@@ -22,7 +21,6 @@ const Home = () => (
           </div>
           <div className="section-game">
             <Board />
-            <DisplayPath />
           </div>
         </OptionsProvider>
       </div>

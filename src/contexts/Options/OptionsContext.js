@@ -12,6 +12,8 @@ const OptionsContext = createContext({
   selectTypeMode: "",
   handleChangeSelectTypeMode: () => {},
   typesCells: ["", "Start", "Obstacle", "Finish"],
+  activePath: false,
+  showPath: () => {},
 });
 
 OptionsContext.displayName = "OptionsContext";

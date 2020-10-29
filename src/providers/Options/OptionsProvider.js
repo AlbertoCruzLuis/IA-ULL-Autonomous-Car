@@ -6,6 +6,7 @@ const OptionsProvider = ({ children }) => {
   const [cols, setCols] = useState(0);
   const [selectTypeMode, setSelectTypeMode] = useState("");
   const [ChosenCellType, setChosenCellType] = useState("Start");
+  const [activePath, setActivePath] = useState(false); 
   const [isBoard, setIsBoard] = useState(false);
 
   const typesCells = ["", "Start", "Obstacle", "Finish"];
@@ -14,20 +15,24 @@ const OptionsProvider = ({ children }) => {
   const handleChangeRows = (e) => {
     setRows(e.target.value);
     setIsBoard(false);
+    setActivePath(false);
   }
 
   const handleChangeCols = (e) => {
     setCols(e.target.value);
     setIsBoard(false);
+    setActivePath(false);
   }
 
   const changeChosenCellType = (type) => {
     setChosenCellType(type);
+    setActivePath(false);
   }
 
   const handleChangeSelectTypeMode = (e) => {
     setSelectTypeMode(e.value);
     setIsBoard(false);
+    setActivePath(false);
   }
 
   const boardActive = () => {
@@ -38,6 +43,9 @@ const OptionsProvider = ({ children }) => {
     }
   }
 
+  const showPath = () => {
+    setActivePath(true);
+  }
   return (
     <OptionsContext.Provider
       value={{
@@ -52,6 +60,8 @@ const OptionsProvider = ({ children }) => {
         selectTypeMode,
         handleChangeSelectTypeMode,
         typesCells,
+        activePath,
+        showPath,
       }}
     >
       {children}
