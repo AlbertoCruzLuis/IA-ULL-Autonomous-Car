@@ -16,7 +16,6 @@ class AStar {
 
     while (openSet.length) {
       current = this.getNodeLessCost(openSet);
-      console.log(current);
       if (current.isEqual(finish)) {
         break;
       }

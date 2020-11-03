@@ -15,29 +15,28 @@ const Cell = ({ type, posX, posY, modeManual, modeRandom }) => {
       setCellSize("xs");
     }
     if ((rows >= 15 && rows <= 60) || (cols >= 15 && cols <= 60)) {
-      console.log("ms");
       setCellSize("ms");
       return;
     }
     if ((rows > 60 && rows < 100) || (cols > 60 && cols < 100)) {
-      console.log("md");
       setCellSize("md");
       return;
     }
     if ((rows >= 100 && rows <= 200) || (cols >= 100 && cols <= 200)) {
-      console.log("lg");
       setCellSize("lg")
       return;
     }
   }
 
   useEffect(() => {
-    console.log("cellEffect");
     sizeResponsive();
-    if (selectTypeMode === "Random") {
-      modeRandom();
-    }
   }, [selectTypeMode, cellSize]);
+
+  useEffect(() => {
+    if (selectTypeMode === "Random") {
+      modeRandom(); 
+    }
+  },[]);
 
   return (
     <Fragment>

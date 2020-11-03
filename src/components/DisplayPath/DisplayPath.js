@@ -4,11 +4,12 @@ import OptionsContext from "../../contexts/Options/OptionsContext";
 import { displayPath } from '../../utils/board-utils'
 
 const DisplayPath = ({ board, updateBoard }) => {
-  const { isBoard, showPath } = useContext(OptionsContext);
+  const { isBoard, showPath, getResultsStatistics } = useContext(OptionsContext);
 
   const activeDisplayPath = () => {
     showPath();
-    displayPath(board,updateBoard);
+    let numMinMove = displayPath(board,updateBoard);
+    getResultsStatistics(numMinMove);
   }
 
   return (

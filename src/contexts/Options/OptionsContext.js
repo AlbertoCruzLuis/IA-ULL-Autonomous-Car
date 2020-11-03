@@ -16,6 +16,8 @@ const OptionsContext = createContext({
   showPath: () => {},
   handleChangeInputFile: () => {},
   gridFile: [[""]],
+  numMove: 0,
+  getResultsStatistics: () => {},
 });
 
 OptionsContext.displayName = "OptionsContext";

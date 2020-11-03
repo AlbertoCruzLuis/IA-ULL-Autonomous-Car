@@ -29,10 +29,9 @@ const Board = () => {
 
   const modeManual = (posX, posY) => {
     const newGrid = [...grid];
-    console.log(newGrid);
     newGrid[posX][posY] === ChosenCellType
       ? (newGrid[posX][posY] = "")
-      : (newGrid[posX][posY] = ChosenCellType);    
+      : (newGrid[posX][posY] = ChosenCellType);
     setGrid(newGrid);
   };
 
@@ -43,8 +42,9 @@ const Board = () => {
   const modeRandom = (posX, posY) => {
     let random_index = Math.floor(Math.random() * typesCells.length + 1);
     const newGrid = [...grid];
-    console.log(newGrid);
+
     newGrid[posX][posY] = typesCells[random_index];
+    
     setGrid(newGrid);
     if (
       typesCells[random_index] === "Start" ||
@@ -70,6 +70,8 @@ const Board = () => {
                   type={element}
                   posX={posX}
                   posY={posY}
+                  board={grid}
+                  setBoard={setGrid}
                   modeManual={() => modeManual(posX, posY)}
                   modeRandom={() => modeRandom(posX, posY)}
                 />

@@ -45,20 +45,56 @@ export const createNode = (grid, typeCell) => {
   }
 };
 
-export const displayPath = (grid, updateBoard) => {
-  let start = createNode(grid, "Start");
-  let finish = createNode(grid, "Finish");
-
-  let algorithm = new AStar(start, finish, grid, "euclidea");
-  for (let i = 0; i < algorithm.path.length; i++) {
-    for (let j = 0; j < grid.length; j++) {
-      for (let k = 0; k < grid[j].length; k++) {
-        if (algorithm.path[i].pos[0] === j && algorithm.path[i].pos[1] === k) {
-          grid[j][k] = algorithm.path[i].typeCell;
-        }
+const resetGrid = (grid) => {
+  for (let i = 0; i < grid.length; i++) {
+    for (let j = 0; j < grid[i].length; j++) {
+      if (grid[i][j] === "Path") {
+        grid[i][j] = "";
       }
     }
   }
-  console.log(algorithm.path);
-  updateBoard(grid);
+  return grid;
+}
+
+const checkStartFinishInGrid = (grid) => {
+  let cellNecesary = [["Start",0],["Finish",0]];
+  for (let i = 0; i < grid.length; i++) {
+    for (let j = 0; j < grid[i].length; j++) {
+      if (grid[i][j] === "Start") {
+        cellNecesary[0][1]++;
+      }
+      if (grid[i][j] === "Finish") {
+        cellNecesary[1][1]++;
+      }
+    }
+  }
+  return cellNecesary[0][1] === 1 && cellNecesary[1][1] === 1;
+}
+
+export const displayPath = (grid, updateBoard) => {
+  if (!checkStartFinishInGrid(grid)) {
+    alert("You need to choose 1 start cell and 1 finish cell");
+    return 0;
+  }
+  let start = createNode(grid, "Start");
+  let finish = createNode(grid, "Finish");
+  let newGrid = resetGrid(grid);
+
+  let algorithm = new AStar(start, finish, newGrid, "euclidea");
+  if (algorithm.path[algorithm.path.length - 1].typeCell !== "Finish") {
+    alert("This map has no solution");
+    return 0;
+  } else {
+    for (let i = 0; i < algorithm.path.length; i++) {
+      for (let j = 0; j < newGrid.length; j++) {
+        for (let k = 0; k < newGrid[j].length; k++) {
+          if (algorithm.path[i].pos[0] === j && algorithm.path[i].pos[1] === k) {
+            newGrid[j][k] = algorithm.path[i].typeCell;
+          }
+        }
+      }
+    }
+    updateBoard(newGrid);
+    return algorithm.path.length-1;
+  }
 };

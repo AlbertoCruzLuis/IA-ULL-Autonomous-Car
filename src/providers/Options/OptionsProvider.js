@@ -10,6 +10,7 @@ const OptionsProvider = ({ children }) => {
   const [ChosenCellType, setChosenCellType] = useState("Start");
   const [activePath, setActivePath] = useState(false); 
   const [isBoard, setIsBoard] = useState(false);
+  const [numMove, setNumMove ] = useState(0);
 
   const typesCells = ["", "Start", "Obstacle", "Finish"];
   
@@ -63,6 +64,9 @@ const OptionsProvider = ({ children }) => {
   const showPath = () => {
     setActivePath(true);
   }
+  const getResultsStatistics = (numMinMove) => {
+    setNumMove(numMinMove);
+  }
   return (
     <OptionsContext.Provider
       value={{
@@ -81,6 +85,8 @@ const OptionsProvider = ({ children }) => {
         showPath,
         handleChangeInputFile,
         gridFile,
+        numMove,
+        getResultsStatistics,
       }}
     >
       {children}
