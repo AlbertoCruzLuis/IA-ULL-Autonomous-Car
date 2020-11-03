@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import OptionsContext from "../../contexts/Options/OptionsContext";
+import { getDataFile } from '../../utils/FileParser'
 
 const OptionsProvider = ({ children }) => {
   const [rows, setRows] = useState(0);
   const [cols, setCols] = useState(0);
+  const [gridFile, setGridFile] = useState([[""]]);
   const [selectTypeMode, setSelectTypeMode] = useState("");
   const [ChosenCellType, setChosenCellType] = useState("Start");
   const [activePath, setActivePath] = useState(false); 
@@ -35,9 +37,24 @@ const OptionsProvider = ({ children }) => {
     setActivePath(false);
   }
 
+  const handleChangeInputFile = (e) => {
+    let file = e.target.files[0];
+    let reader = new FileReader();
+    reader.onload = (e) => {
+      setRows(getDataFile(e.target.result)[0]);
+      setCols(getDataFile(e.target.result)[1]);
+      setGridFile(getDataFile(e.target.result)[2]);
+    }
+    reader.readAsText(file);
+  }
+
   const boardActive = () => {
     if (rows && cols && selectTypeMode) {
-      setIsBoard(true);
+      if (rows <= 200 && cols <= 200) {
+        setIsBoard(true);
+      } else {
+        alert("You have exceeded the maximum size available. Max Size: 200");
+      }
     } else {
       alert("Fill All Options");
     }
@@ -62,6 +79,8 @@ const OptionsProvider = ({ children }) => {
         typesCells,
         activePath,
         showPath,
+        handleChangeInputFile,
+        gridFile,
       }}
     >
       {children}

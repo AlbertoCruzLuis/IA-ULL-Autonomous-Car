@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, Fragment } from "react";
+import React, { useState, useEffect, useContext, Fragment } from "react";
 import "./Cell.scss";
 import OptionsContext from "../../contexts/Options/OptionsContext";
 import Finish from "./Finish/Finish";
@@ -7,50 +7,74 @@ import Start from "./Start/Start";
 import Path from "./Path/Path";
 
 const Cell = ({ type, posX, posY, modeManual, modeRandom }) => {
-  const { selectTypeMode, activePath } = useContext(OptionsContext);
+  const [cellSize, setCellSize] = useState("");
+  const { selectTypeMode, activePath, rows, cols } = useContext(OptionsContext);
+
+  const sizeResponsive = () => {
+    if ((rows < 15) || (cols < 15)) {
+      setCellSize("xs");
+    }
+    if ((rows >= 15 && rows <= 60) || (cols >= 15 && cols <= 60)) {
+      console.log("ms");
+      setCellSize("ms");
+      return;
+    }
+    if ((rows > 60 && rows < 100) || (cols > 60 && cols < 100)) {
+      console.log("md");
+      setCellSize("md");
+      return;
+    }
+    if ((rows >= 100 && rows <= 200) || (cols >= 100 && cols <= 200)) {
+      console.log("lg");
+      setCellSize("lg")
+      return;
+    }
+  }
 
   useEffect(() => {
+    console.log("cellEffect");
+    sizeResponsive();
     if (selectTypeMode === "Random") {
       modeRandom();
     }
-  }, [selectTypeMode]);
+  }, [selectTypeMode, cellSize]);
 
   return (
     <Fragment>
       {!activePath ? (
-        <div className="Cell">
+        <div className={"Cell " + cellSize}>
           {selectTypeMode === "Random" ? (
-            <button>
+            <button className={cellSize}>
               {type === "Start" ? (
-                <Start />
+                <Start cellSize={cellSize} />
               ) : type === "Finish" ? (
-                <Finish />
+                <Finish cellSize={cellSize} />
               ) : type === "Obstacle" ? (
-                <Obstacle />
+                <Obstacle cellSize={cellSize} />
               ) : null}
             </button>
           ) : (
-            <button onClick={modeManual}>
+            <button className={cellSize} onClick={modeManual}>
               {type === "" ? null : type === "Start" ? (
-                <Start />
+                <Start cellSize={cellSize} />
               ) : type === "Finish" ? (
-                <Finish />
+                <Finish cellSize={cellSize} />
               ) : type === "Obstacle" ? (
-                <Obstacle />
+                <Obstacle cellSize={cellSize} />
               ) : null}
             </button>
           )}
         </div>
       ) : (
-        <div className="Cell">
+        <div className={"Cell " + cellSize}>
           {activePath ? (
-            <button>
+            <button className={cellSize}>
               {type === "Start" ? (
-                <Start />
+                <Start cellSize={cellSize} />
               ) : type === "Finish" ? (
-                <Finish />
+                <Finish cellSize={cellSize} />
               ) : type === "Obstacle" ? (
-                <Obstacle />
+                <Obstacle cellSize={cellSize} />
               ) : type === "Path" ? (
                 <Path />
               ) : null}

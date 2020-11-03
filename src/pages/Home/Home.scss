@@ -7,7 +7,7 @@
 
 .section {
   display: flex;
-  height: 80vh;
+  height: 100%;
 }
 
 .section-options {
@@ -26,8 +26,7 @@
   align-items: center;
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
   .section {
     flex-direction: column;
     height: 100%;

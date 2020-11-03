@@ -1,5 +1,6 @@
 import React, { Fragment, useContext } from "react";
 import Select from "react-select";
+import Upload from '../../assets/Upload.svg'
 import OptionsContext from "../../contexts/Options/OptionsContext";
 import "./Options.scss";
 
@@ -10,12 +11,14 @@ const Options = () => {
     handleChangeSelectTypeMode,
     boardActive,
     changeChosenCellType,
+    handleChangeInputFile,
     selectTypeMode,
   } = useContext(OptionsContext);
 
   const options = [
     { value: "Random", label: "Random" },
     { value: "Manual", label: "Manual" },
+    { value: "File", label: "File" },
   ];
 
   return (
@@ -69,6 +72,17 @@ const Options = () => {
               </div>
             </div>
           ) : null}
+          { selectTypeMode === "File" ? (
+            <div className="options-extra">
+              <div className="option">
+                <label>
+                  Choose File Txt
+                  <img src={Upload} alt=""/>
+                  <input type="file" onChange={handleChangeInputFile} accept=".txt"/>
+                </label>
+              </div>
+            </div>
+          ) : null }
         </div>
         <div className="option-submit">
           <button type="submit" onClick={boardActive}>

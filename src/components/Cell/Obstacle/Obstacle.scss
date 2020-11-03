@@ -1,6 +1,26 @@
 .obstacle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   img {
-    width: 35px;
-    height: 35px;
+    &.xs {
+      width: 15px;
+      height: 15px;
+    }
+
+    &.ms {
+      width: 8px;
+      height: 8px;
+    }
+  
+    &.md {
+      width: 8px;
+      height: 8px;
+    }
+  
+    &.lg {
+      width: 7px;
+      height: 7px;
+    }
   }
 }

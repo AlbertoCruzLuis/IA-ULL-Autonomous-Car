@@ -14,12 +14,18 @@ const Board = () => {
     ChosenCellType,
     typesCells,
     selectTypeMode,
+    gridFile,
   } = useContext(OptionsContext);
   const [grid, setGrid] = useState([[""]]);
 
   useEffect(() => {
-    setGrid(createMatrix(rows, cols, ""));
-  }, [rows, cols, selectTypeMode]);
+    if (rows <= 200 || cols <= 200) {
+      setGrid(createMatrix(rows, cols, ""));
+    }
+    if (gridFile && selectTypeMode === "File") {
+      modeFile();
+    }
+  }, [rows, cols, selectTypeMode, gridFile]);
 
   const modeManual = (posX, posY) => {
     const newGrid = [...grid];
@@ -47,6 +53,10 @@ const Board = () => {
       typesCells.splice(random_index, 1);
     }
   };
+
+  const modeFile = () => {
+    setGrid(gridFile);
+  }
 
   return (
     <Fragment>

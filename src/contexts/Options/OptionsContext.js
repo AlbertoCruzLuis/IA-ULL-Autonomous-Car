@@ -14,6 +14,8 @@ const OptionsContext = createContext({
   typesCells: ["", "Start", "Obstacle", "Finish"],
   activePath: false,
   showPath: () => {},
+  handleChangeInputFile: () => {},
+  gridFile: [[""]],
 });
 
 OptionsContext.displayName = "OptionsContext";
