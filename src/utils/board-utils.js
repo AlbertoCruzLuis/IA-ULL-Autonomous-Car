@@ -71,7 +71,7 @@ const checkStartFinishInGrid = (grid) => {
   return cellNecesary[0][1] === 1 && cellNecesary[1][1] === 1;
 }
 
-export const displayPath = (grid, updateBoard) => {
+export const displayPath = (grid, heuristic, updateBoard) => {
   if (!checkStartFinishInGrid(grid)) {
     alert("You need to choose 1 start cell and 1 finish cell");
     return 0;
@@ -80,7 +80,10 @@ export const displayPath = (grid, updateBoard) => {
   let finish = createNode(grid, "Finish");
   let newGrid = resetGrid(grid);
 
-  let algorithm = new AStar(start, finish, newGrid, "euclidea");
+  let startClock = performance.now()
+  let algorithm = new AStar(start, finish, newGrid, heuristic);
+  let endClock = performance.now();
+  let timeCode = endClock - startClock;
   if (algorithm.path[algorithm.path.length - 1].typeCell !== "Finish") {
     alert("This map has no solution");
     return 0;
@@ -95,6 +98,6 @@ export const displayPath = (grid, updateBoard) => {
       }
     }
     updateBoard(newGrid);
-    return algorithm.path.length-1;
+    return [algorithm.path.length-1, timeCode];
   }
 };

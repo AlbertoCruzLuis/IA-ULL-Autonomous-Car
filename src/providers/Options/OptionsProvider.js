@@ -6,11 +6,13 @@ const OptionsProvider = ({ children }) => {
   const [rows, setRows] = useState(0);
   const [cols, setCols] = useState(0);
   const [gridFile, setGridFile] = useState([[""]]);
+  const [selectHeuristic, setSelectHeuristic] = useState("");
   const [selectTypeMode, setSelectTypeMode] = useState("");
   const [ChosenCellType, setChosenCellType] = useState("Start");
   const [activePath, setActivePath] = useState(false); 
   const [isBoard, setIsBoard] = useState(false);
   const [numMove, setNumMove ] = useState(0);
+  const [timeCode, setTimeCode] = useState(0);
 
   const typesCells = ["", "Start", "Obstacle", "Finish"];
   
@@ -38,6 +40,12 @@ const OptionsProvider = ({ children }) => {
     setActivePath(false);
   }
 
+  const handleChangeSelectHeuristic = (e) => {
+    setSelectHeuristic(e.value);
+    setIsBoard(false);
+    setActivePath(false);
+  }
+
   const handleChangeInputFile = (e) => {
     let file = e.target.files[0];
     let reader = new FileReader();
@@ -50,7 +58,7 @@ const OptionsProvider = ({ children }) => {
   }
 
   const boardActive = () => {
-    if (rows && cols && selectTypeMode) {
+    if (rows && cols && selectTypeMode && selectHeuristic) {
       if (rows <= 200 && cols <= 200) {
         setIsBoard(true);
       } else {
@@ -64,8 +72,9 @@ const OptionsProvider = ({ children }) => {
   const showPath = () => {
     setActivePath(true);
   }
-  const getResultsStatistics = (numMinMove) => {
+  const getResultsStatistics = (numMinMove, timeCode) => {
     setNumMove(numMinMove);
+    setTimeCode(timeCode);
   }
   return (
     <OptionsContext.Provider
@@ -86,7 +95,10 @@ const OptionsProvider = ({ children }) => {
         handleChangeInputFile,
         gridFile,
         numMove,
+        timeCode,
         getResultsStatistics,
+        selectHeuristic,
+        handleChangeSelectHeuristic,
       }}
     >
       {children}

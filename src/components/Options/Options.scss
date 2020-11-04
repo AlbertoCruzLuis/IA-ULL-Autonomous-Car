@@ -33,7 +33,13 @@
 .option-select-obstacle {
   margin-bottom: 20px;
   margin: 15px;
-  width: 130px;
+  width: 150px;
+}
+
+.option-heuristic-function {
+  margin-bottom: 20px;
+  margin: 15px;
+  width: 150px;
 }
 
 .option-row > input {
@@ -42,7 +48,7 @@
   background-color: rgba(255, 255, 255, 0.199);
   border-bottom: 1px solid #5e005e;
   color: rgb(207, 207, 207);
-  width: 130px;
+  width: 150px;
 }
 
 .option-row > input::placeholder {
@@ -58,7 +64,7 @@
     background-color: rgba(255, 255, 255, 0.199);
     border-bottom: 1px solid #5e005e;
     color: rgb(207, 207, 207);
-    width: 130px;
+    width: 150px;
   }
 
   input::placeholder {
@@ -150,6 +156,11 @@
   }
   .option-select-obstacle {
     margin: auto;
+    margin-top: 20px;
+  }
+  .option-heuristic-function {
+    margin: auto;
+    margin-top: 5px;
   }
   .options-extra {
     margin: 15px;

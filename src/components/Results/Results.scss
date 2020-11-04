@@ -15,10 +15,11 @@
 
   .results-content {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding: 10px;
     font-size: 1.1em;
-    span {
+    .result {
       margin-bottom: 5px;
     }
   }

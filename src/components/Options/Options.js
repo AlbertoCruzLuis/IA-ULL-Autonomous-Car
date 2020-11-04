@@ -12,13 +12,19 @@ const Options = () => {
     boardActive,
     changeChosenCellType,
     handleChangeInputFile,
+    handleChangeSelectHeuristic,
     selectTypeMode,
   } = useContext(OptionsContext);
 
-  const options = [
+  const optionsObstacle = [
     { value: "Random", label: "Random" },
     { value: "Manual", label: "Manual" },
     { value: "File", label: "File" },
+  ];
+
+  const optionsHeuristic = [
+    { value: "euclidea", label: "Euclidea" },
+    { value: "manhattan", label: "Manhattan" },
   ];
 
   return (
@@ -44,9 +50,17 @@ const Options = () => {
               />
             </div>
           </div>
+          <div className="option-heuristic-function">
+            <Select
+              placeholder="Select Heuristic"
+              options={optionsHeuristic}
+              onChange={handleChangeSelectHeuristic}
+            ></Select>
+          </div>
           <div className="option-select-obstacle">
             <Select
-              options={options}
+              placeholder="Select Mode"
+              options={optionsObstacle}
               onChange={handleChangeSelectTypeMode}
             ></Select>
           </div>

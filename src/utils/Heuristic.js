@@ -4,14 +4,18 @@ class Heuristic {
     this.endPos = endPos;
   }
   euclidea() {
-    //sqrt( Ix-Fx^2 + Iy-Fy^2 )
     return Math.sqrt(
-      Math.pow(this.initialPos[0] - this.endPos[0],2) +
-        Math.pow(this.initialPos[1] - this.endPos[1],2)
+      Math.pow(this.initialPos[0] - this.endPos[0], 2) +
+        Math.pow(this.initialPos[1] - this.endPos[1], 2)
     );
   }
 
-  manhattan() {}
+  manhattan() {
+    return (
+      Math.abs(this.initialPos[0] - this.endPos[0]) +
+      Math.abs(this.initialPos[1] - this.endPos[1])
+    );
+  }
 }
 
 export const getHeuristic = (typefunc, initial, end) => {

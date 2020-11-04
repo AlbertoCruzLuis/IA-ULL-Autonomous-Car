@@ -3,7 +3,7 @@ import OptionsContext from "../../contexts/Options/OptionsContext";
 import './Results.scss'
 
 const Results = () => {
-  const { activePath, numMove } = useContext(OptionsContext);
+  const { activePath, numMove, timeCode } = useContext(OptionsContext);
   return (
     <Fragment>
       { activePath ? (
@@ -12,7 +12,12 @@ const Results = () => {
             <span>Results</span>
           </div>
           <div className="results-content">
-            <span>Minimum number of movements: {numMove}</span>
+            <div className="result">
+              <span>Minimum number of movements: {numMove}</span>
+            </div>
+            <div className="result">
+              <span>Time to run the algorithm: {timeCode} ms</span>
+            </div>
           </div>
         </div>
       ) : null }
