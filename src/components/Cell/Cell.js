@@ -6,7 +6,7 @@ import Obstacle from "./Obstacle/Obstacle";
 import Start from "./Start/Start";
 import Path from "./Path/Path";
 
-const Cell = ({ type, posX, posY, modeManual, modeRandom }) => {
+const Cell = ({ type, posX, posY, modeManual }) => {
   const [cellSize, setCellSize] = useState("");
   const { selectTypeMode, activePath, rows, cols } = useContext(OptionsContext);
 
@@ -31,12 +31,6 @@ const Cell = ({ type, posX, posY, modeManual, modeRandom }) => {
   useEffect(() => {
     sizeResponsive();
   }, [selectTypeMode, cellSize]);
-
-  useEffect(() => {
-    if (selectTypeMode === "Random") {
-      modeRandom(); 
-    }
-  },[]);
 
   return (
     <Fragment>

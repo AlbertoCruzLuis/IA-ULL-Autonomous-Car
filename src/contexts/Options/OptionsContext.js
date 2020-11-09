@@ -22,6 +22,9 @@ const OptionsContext = createContext({
   getResultsStatistics: () => {},
   handleChangeSelectHeuristic: () => {},
   selectHeuristic: "",
+  obstaclePercentage: 0,
+  handleChangeObstaclePercentage: () => {}
+
 });
 
 OptionsContext.displayName = "OptionsContext";

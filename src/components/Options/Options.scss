@@ -136,6 +136,21 @@
     }
   }
 }
+.options-extra {
+  .option {
+    input.percentage-obstacle {
+      padding: 10px;
+      font-size: 16px;
+      background-color: $yellow-color;
+      border-radius: 5px;
+      width: 150px;
+
+      &::placeholder {
+        color: $black-color;
+      }
+    }
+  }
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 700px) {

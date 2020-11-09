@@ -11,11 +11,12 @@ const OptionsProvider = ({ children }) => {
   const [ChosenCellType, setChosenCellType] = useState("Start");
   const [activePath, setActivePath] = useState(false); 
   const [isBoard, setIsBoard] = useState(false);
+  const [obstaclePercentage, setObstaclePercentage] = useState(0);
   const [numMove, setNumMove ] = useState(0);
   const [timeCode, setTimeCode] = useState(0);
   const [totalNode, setTotalNode] = useState(0);
 
-  const typesCells = ["", "Start", "Obstacle", "Finish"];
+  const typesCells = ["", "Obstacle", "Start", "Finish"];
   
 
   const handleChangeRows = (e) => {
@@ -56,6 +57,12 @@ const OptionsProvider = ({ children }) => {
       setGridFile(getDataFile(e.target.result)[2]);
     }
     reader.readAsText(file);
+  }
+
+  const handleChangeObstaclePercentage = (e) => {
+    setObstaclePercentage(e.target.value);
+    setIsBoard(false);
+    setActivePath(false);
   }
 
   const boardActive = () => {
@@ -102,6 +109,8 @@ const OptionsProvider = ({ children }) => {
         getResultsStatistics,
         selectHeuristic,
         handleChangeSelectHeuristic,
+        obstaclePercentage,
+        handleChangeObstaclePercentage,
       }}
     >
       {children}

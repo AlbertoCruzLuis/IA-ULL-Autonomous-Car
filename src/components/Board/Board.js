@@ -2,7 +2,7 @@ import React, { Fragment, useContext } from "react";
 import Cell from "../Cell/Cell";
 import OptionsContext from "../../contexts/Options/OptionsContext";
 import "./Board.scss";
-import { createMatrix } from "../../utils/board-utils";
+import { createMatrix, generateMatrixRandom } from "../../utils/board-utils";
 import { useState, useEffect } from "react";
 import DisplayPath from "../DisplayPath/DisplayPath";
 
@@ -15,6 +15,7 @@ const Board = () => {
     typesCells,
     selectTypeMode,
     gridFile,
+    obstaclePercentage,
   } = useContext(OptionsContext);
   const [grid, setGrid] = useState([[""]]);
 
@@ -25,7 +26,10 @@ const Board = () => {
     if (gridFile && selectTypeMode === "File") {
       modeFile();
     }
-  }, [rows, cols, selectTypeMode, gridFile]);
+    if (isBoard && selectTypeMode === "Random") {
+      modeRandom();
+    }
+  }, [rows, cols, selectTypeMode, gridFile, isBoard, obstaclePercentage]);
 
   const modeManual = (posX, posY) => {
     const newGrid = [...grid];
@@ -37,32 +41,23 @@ const Board = () => {
 
   const updateBoard = (newGrid) => {
     setGrid(newGrid);
-  }
+  };
 
-  const modeRandom = (posX, posY) => {
-    let random_index = Math.floor(Math.random() * typesCells.length + 1);
-    const newGrid = [...grid];
-
-    newGrid[posX][posY] = typesCells[random_index];
-    
+  const modeRandom = () => {
+    let decimalPercentage = obstaclePercentage / 100;
+    let newGrid = generateMatrixRandom(rows, cols, typesCells, decimalPercentage);
     setGrid(newGrid);
-    if (
-      typesCells[random_index] === "Start" ||
-      typesCells[random_index] === "Finish"
-    ) {
-      typesCells.splice(random_index, 1);
-    }
   };
 
   const modeFile = () => {
     setGrid(gridFile);
-  }
+  };
 
   return (
     <Fragment>
-    <div className="board">
-      {isBoard
-        ? grid.map((row, posX) => (
+      <div className="board">
+        {isBoard ? (
+          grid.map((row, posX) => (
             <div className="row" key={`${posX}`}>
               {row.map((element, posY) => (
                 <Cell
@@ -73,14 +68,15 @@ const Board = () => {
                   board={grid}
                   setBoard={setGrid}
                   modeManual={() => modeManual(posX, posY)}
-                  modeRandom={() => modeRandom(posX, posY)}
                 />
               ))}
             </div>
           ))
-        : ( <span>Board</span> )}
-    </div>
-    <DisplayPath board={grid} updateBoard={updateBoard}/>
+        ) : (
+          <span>Board</span>
+        )}
+      </div>
+      <DisplayPath board={grid} updateBoard={updateBoard} />
     </Fragment>
   );
 };

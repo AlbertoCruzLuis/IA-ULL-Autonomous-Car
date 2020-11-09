@@ -4,39 +4,3 @@
   flex: 1;
   width: 100%;
 }
-
-.section {
-  display: flex;
-  height: 100%;
-}
-
-.section-options {
-  width: 35%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.329);
-}
-
-.section-game {
-  width: 65%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-@media only screen and (max-width: 700px) {
-  .section {
-    flex-direction: column;
-    height: 100%;
-  }
-  .section-options {
-    width: 100%;
-  }
-  .section-game {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 100%;
-  }
-}

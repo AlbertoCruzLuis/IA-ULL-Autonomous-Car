@@ -1,6 +1,6 @@
 import React, { Fragment, useContext } from "react";
 import Select from "react-select";
-import Upload from '../../assets/Upload.svg'
+import Upload from "../../assets/Upload.svg";
 import OptionsContext from "../../contexts/Options/OptionsContext";
 import "./Options.scss";
 
@@ -14,6 +14,7 @@ const Options = () => {
     handleChangeInputFile,
     handleChangeSelectHeuristic,
     selectTypeMode,
+    handleChangeObstaclePercentage,
   } = useContext(OptionsContext);
 
   const optionsObstacle = [
@@ -86,17 +87,33 @@ const Options = () => {
               </div>
             </div>
           ) : null}
-          { selectTypeMode === "File" ? (
+          {selectTypeMode === "Random" ? (
+            <div className="options-extra">
+              <div className="option">
+                <input
+                  className="percentage-obstacle"
+                  type="text"
+                  placeholder="% Obstacle..."
+                  onChange={handleChangeObstaclePercentage}
+                />
+              </div>
+            </div>
+          ) : null}
+          {selectTypeMode === "File" ? (
             <div className="options-extra">
               <div className="option">
                 <label>
                   Choose File Txt
-                  <img src={Upload} alt=""/>
-                  <input type="file" onChange={handleChangeInputFile} accept=".txt"/>
+                  <img src={Upload} alt="" />
+                  <input
+                    type="file"
+                    onChange={handleChangeInputFile}
+                    accept=".txt"
+                  />
                 </label>
               </div>
             </div>
-          ) : null }
+          ) : null}
         </div>
         <div className="option-submit">
           <button type="submit" onClick={boardActive}>

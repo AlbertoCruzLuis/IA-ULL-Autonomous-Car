@@ -72,7 +72,6 @@ const checkStartFinishInGrid = (grid) => {
 }
 
 export const displayPath = (grid, heuristic, updateBoard) => {
-  console.log("Veces");
   if (!checkStartFinishInGrid(grid)) {
     alert("You need to choose 1 start cell and 1 finish cell");
     return 0;
@@ -102,3 +101,45 @@ export const displayPath = (grid, heuristic, updateBoard) => {
     return [algorithm.path.length-1, timeCode, algorithm.totalNode];
   }
 };
+
+export const generateMatrixRandom = (rows, cols, typesCells, percentageObstacle) => {
+  let numberObstacle = (percentageObstacle * (rows * cols)) - 2;
+  let numberEmptyCell = (rows * cols) - numberObstacle - 2;
+  let cont = [numberEmptyCell,numberObstacle,1,1];
+  let typesCellsCont = [typesCells,cont]
+  //Check all cont > 0
+  for (let i = 0; i < typesCellsCont[0].length; i++) {
+    if (typesCellsCont[1][i] <= 0) {
+      typesCellsCont[0].splice(i, 1);
+      typesCellsCont[1].splice(i, 1);
+    }
+    
+  }
+  let newGrid = [];  
+  for (let posX = 0; posX < rows; posX++) {
+    let newRow = [];
+    for (let posY = 0; posY < cols; posY++) {
+      let random_index = Math.floor(Math.random() * typesCellsCont[0].length);
+      //Separate between Start and Finish Position
+      if (posX <= (rows / 2)) {
+        if (typesCellsCont[0][random_index] !== "Finish") {
+          newRow.push(typesCellsCont[0][random_index]);
+        } else {
+          random_index = 0;
+          newRow.push(typesCellsCont[0][random_index]);
+        }
+      }
+      if (posX > (rows / 2)) {
+        newRow.push(typesCellsCont[0][random_index]);
+      }
+
+      typesCellsCont[1][random_index]--;
+      if (typesCellsCont[1][random_index] <= 0) {
+        typesCellsCont[0].splice(random_index, 1);
+        typesCellsCont[1].splice(random_index, 1);
+      }
+    }
+    newGrid.push(newRow);
+  }
+  return newGrid;
+}
