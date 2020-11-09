@@ -17,7 +17,28 @@
   word-wrap: break-word;
 }
 
-.numero {
+.information-help {
+  margin: 15px;
+  .btn-help {
+    background-color: $yellow-color;
+    cursor: pointer;
+    display: flex;
+    padding: 8px;
+    font-size: 1.1em;
+    border-radius: 8px;
+
+    .info-icon {
+      margin-right: 5px;
+      width: 20px;
+      height: 20px;
+    }
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.number {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,12 +79,57 @@
   }
 }
 
-.paso {
+.step {
   display: flex;
   margin: 15px;
 
   p {
     display: flex;
     align-items: center;
+  }
+}
+
+.modal-container {
+  .modal-close {
+    width: 100%;
+    text-align: end;
+    margin-bottom: 5px;
+
+    .btn-close {  
+      background-color: white;
+      cursor: pointer;
+
+      .close-icon {
+        width: 15px;
+        height: 15px;
+      }
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  .mode {
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      background-color: $black-color;
+      color: white;
+      border-radius: 8px;
+      padding: 5px;
+      font-size: 1.2em;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      margin: 8px;
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 8px;
+      }
+    }
   }
 }

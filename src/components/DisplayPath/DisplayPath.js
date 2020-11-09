@@ -7,9 +7,12 @@ const DisplayPath = ({ board, updateBoard }) => {
   const { isBoard, selectHeuristic, showPath, getResultsStatistics } = useContext(OptionsContext);
 
   const activeDisplayPath = () => {
+    if (displayPath(board, selectHeuristic, updateBoard) === 0) {
+      return;
+    }
     showPath();
-    let [numMinMove, timeCode] = displayPath(board, selectHeuristic, updateBoard);
-    getResultsStatistics(numMinMove, timeCode);
+    let [numMinMove, timeCode, totalNode] = displayPath(board, selectHeuristic, updateBoard);
+    getResultsStatistics(numMinMove, timeCode, totalNode); 
   }
 
   return (

@@ -18,6 +18,7 @@ const OptionsContext = createContext({
   gridFile: [[""]],
   numMove: 0,
   timeCode: 0,
+  totalNode: 0,
   getResultsStatistics: () => {},
   handleChangeSelectHeuristic: () => {},
   selectHeuristic: "",

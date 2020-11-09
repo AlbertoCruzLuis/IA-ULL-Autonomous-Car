@@ -13,6 +13,7 @@ const OptionsProvider = ({ children }) => {
   const [isBoard, setIsBoard] = useState(false);
   const [numMove, setNumMove ] = useState(0);
   const [timeCode, setTimeCode] = useState(0);
+  const [totalNode, setTotalNode] = useState(0);
 
   const typesCells = ["", "Start", "Obstacle", "Finish"];
   
@@ -72,9 +73,10 @@ const OptionsProvider = ({ children }) => {
   const showPath = () => {
     setActivePath(true);
   }
-  const getResultsStatistics = (numMinMove, timeCode) => {
+  const getResultsStatistics = (numMinMove, timeCode, totalNode) => {
     setNumMove(numMinMove);
     setTimeCode(timeCode);
+    setTotalNode(totalNode);
   }
   return (
     <OptionsContext.Provider
@@ -96,6 +98,7 @@ const OptionsProvider = ({ children }) => {
         gridFile,
         numMove,
         timeCode,
+        totalNode,
         getResultsStatistics,
         selectHeuristic,
         handleChangeSelectHeuristic,

@@ -72,6 +72,7 @@ const checkStartFinishInGrid = (grid) => {
 }
 
 export const displayPath = (grid, heuristic, updateBoard) => {
+  console.log("Veces");
   if (!checkStartFinishInGrid(grid)) {
     alert("You need to choose 1 start cell and 1 finish cell");
     return 0;
@@ -98,6 +99,6 @@ export const displayPath = (grid, heuristic, updateBoard) => {
       }
     }
     updateBoard(newGrid);
-    return [algorithm.path.length-1, timeCode];
+    return [algorithm.path.length-1, timeCode, algorithm.totalNode];
   }
 };

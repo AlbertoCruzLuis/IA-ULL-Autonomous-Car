@@ -4,7 +4,7 @@ export const getDataFile = (dataFile) => {
 
   let lineFile = dataFile.split('\n');
   let matrixGrid = []
-  for (let i = 1; i < lineFile.length; i++) {
+  for (let i = 0; i < lineFile.length; i++) {
     let arrRow = [];
     for (let j = 0; j < lineFile[i].length; j++) {
       if (lineFile[i][j] === "-") {
@@ -22,7 +22,8 @@ export const getDataFile = (dataFile) => {
     }
     matrixGrid.push(arrRow);
   }
-  let [rows, cols] = lineFile[0].split(' ');
+  let rows = matrixGrid.length;
+  let cols = matrixGrid[0].length;
   arrInfo.push(rows);
   arrInfo.push(cols);
   arrInfo.push(matrixGrid);

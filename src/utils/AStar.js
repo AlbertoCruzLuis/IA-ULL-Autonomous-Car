@@ -5,6 +5,7 @@ import { generateNeighbors } from "./board-utils";
 class AStar {
   constructor(start, finish, grid, type_heuristic) {
     this.type_heuristic = type_heuristic;
+    this.totalNode = 0;
     this.path = this.findPath(start, finish, grid);
     this.grid = grid;
   }
@@ -46,6 +47,7 @@ class AStar {
 
         let nextNode = this.getNodeInSet(openSet, neighbour);
         if (nextNode === null) {
+          this.totalNode += 1;
           nextNode = neighbour;
           nextNode.parent = current;
           nextNode.realCost = totalCost;
