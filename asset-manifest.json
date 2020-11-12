@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.27688b4b.chunk.css",
+    "main.js": "/static/js/main.46eccd25.chunk.js",
+    "main.js.map": "/static/js/main.46eccd25.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.6c51c7c6.js",
+    "runtime-main.js.map": "/static/js/runtime-main.6c51c7c6.js.map",
+    "static/js/2.5e5925c4.chunk.js": "/static/js/2.5e5925c4.chunk.js",
+    "static/js/2.5e5925c4.chunk.js.map": "/static/js/2.5e5925c4.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.8a3fcf511975c3062644c146d64c43ca.js": "/precache-manifest.8a3fcf511975c3062644c146d64c43ca.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.27688b4b.chunk.css.map": "/static/css/main.27688b4b.chunk.css.map",
+    "static/js/2.5e5925c4.chunk.js.LICENSE.txt": "/static/js/2.5e5925c4.chunk.js.LICENSE.txt",
+    "static/media/Car.svg": "/static/media/Car.f2f0daa4.svg",
+    "static/media/Close.svg": "/static/media/Close.ebf2f3f4.svg",
+    "static/media/Cone.svg": "/static/media/Cone.3b45ddf4.svg",
+    "static/media/Finish.svg": "/static/media/Finish.c3622948.svg",
+    "static/media/Github.svg": "/static/media/Github.192a6620.svg",
+    "static/media/Info.svg": "/static/media/Info.eb46d635.svg",
+    "static/media/Logo.svg": "/static/media/Logo.8414db1e.svg",
+    "static/media/ManualExample.png": "/static/media/ManualExample.5880fd53.png",
+    "static/media/Upload.svg": "/static/media/Upload.8d77e2c0.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6c51c7c6.js",
+    "static/js/2.5e5925c4.chunk.js",
+    "static/css/main.27688b4b.chunk.css",
+    "static/js/main.46eccd25.chunk.js"
+  ]
+}
