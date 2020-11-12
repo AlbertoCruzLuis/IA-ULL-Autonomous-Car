@@ -44,7 +44,6 @@ const OptionsProvider = ({ children }) => {
 
   const handleChangeSelectHeuristic = (e) => {
     setSelectHeuristic(e.value);
-    setIsBoard(false);
     setActivePath(false);
   }
 

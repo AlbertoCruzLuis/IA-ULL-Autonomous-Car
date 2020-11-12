@@ -41,13 +41,14 @@
   .section {
     flex-direction: column;
     height: 100%;
-  }
-  .section-options {
-    width: 100%;
-  }
-  .section-game {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 100%;
+
+    .section-options {
+      width: 100%;
+    }
+    .section-game {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      width: 100%;
+    }
   }
 }
