@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/IA-ULL-Autonomous-Car/precache-manifest.f4c9302b6d06c79272f34308cbdedeae.js"
+  "/IA-ULL-Autonomous-Car/precache-manifest.72b0f2e984beb3fe2eec7dabf1497260.js"
 );
 
 self.addEventListener('message', (event) => {

@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3650391ecc5c0faf95ec7220ff091a6c",
+    "revision": "0b798c022bbe6878c5628feb1dbd75db",
     "url": "/IA-ULL-Autonomous-Car/index.html"
   },
   {
-    "revision": "b1c2fc1d50c653abae0a",
+    "revision": "37129339594f9b7860d7",
     "url": "/IA-ULL-Autonomous-Car/static/css/main.dd56370f.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/IA-ULL-Autonomous-Car/static/js/2.5e5925c4.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b1c2fc1d50c653abae0a",
-    "url": "/IA-ULL-Autonomous-Car/static/js/main.46eccd25.chunk.js"
+    "revision": "37129339594f9b7860d7",
+    "url": "/IA-ULL-Autonomous-Car/static/js/main.bcf5bd0e.chunk.js"
   },
   {
     "revision": "e486163bdcc6ec854fd0",

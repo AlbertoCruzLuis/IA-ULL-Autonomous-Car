@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/IA-ULL-Autonomous-Car/static/css/main.dd56370f.chunk.css",
-    "main.js": "/IA-ULL-Autonomous-Car/static/js/main.46eccd25.chunk.js",
-    "main.js.map": "/IA-ULL-Autonomous-Car/static/js/main.46eccd25.chunk.js.map",
+    "main.js": "/IA-ULL-Autonomous-Car/static/js/main.bcf5bd0e.chunk.js",
+    "main.js.map": "/IA-ULL-Autonomous-Car/static/js/main.bcf5bd0e.chunk.js.map",
     "runtime-main.js": "/IA-ULL-Autonomous-Car/static/js/runtime-main.a2e31294.js",
     "runtime-main.js.map": "/IA-ULL-Autonomous-Car/static/js/runtime-main.a2e31294.js.map",
     "static/js/2.5e5925c4.chunk.js": "/IA-ULL-Autonomous-Car/static/js/2.5e5925c4.chunk.js",
     "static/js/2.5e5925c4.chunk.js.map": "/IA-ULL-Autonomous-Car/static/js/2.5e5925c4.chunk.js.map",
     "index.html": "/IA-ULL-Autonomous-Car/index.html",
-    "precache-manifest.f4c9302b6d06c79272f34308cbdedeae.js": "/IA-ULL-Autonomous-Car/precache-manifest.f4c9302b6d06c79272f34308cbdedeae.js",
+    "precache-manifest.72b0f2e984beb3fe2eec7dabf1497260.js": "/IA-ULL-Autonomous-Car/precache-manifest.72b0f2e984beb3fe2eec7dabf1497260.js",
     "service-worker.js": "/IA-ULL-Autonomous-Car/service-worker.js",
     "static/css/main.dd56370f.chunk.css.map": "/IA-ULL-Autonomous-Car/static/css/main.dd56370f.chunk.css.map",
     "static/js/2.5e5925c4.chunk.js.LICENSE.txt": "/IA-ULL-Autonomous-Car/static/js/2.5e5925c4.chunk.js.LICENSE.txt",
@@ -26,6 +26,6 @@
     "static/js/runtime-main.a2e31294.js",
     "static/js/2.5e5925c4.chunk.js",
     "static/css/main.dd56370f.chunk.css",
-    "static/js/main.46eccd25.chunk.js"
+    "static/js/main.bcf5bd0e.chunk.js"
   ]
 }
